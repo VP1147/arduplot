@@ -1,2 +1,2 @@
 # arduboom
- Simple Arduino static energy detector. 
+ Simple Arduino static energy detector.
