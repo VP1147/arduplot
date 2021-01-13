@@ -12,22 +12,18 @@ except:
 List = {}
 
 # Number of samples per cycle
-samples = 500
-
-# Ratio between samples and axis 
-ratio = 1
+samples = 1000
 
 # Start tg
 tg.theme("dark.json")
-tg.init(800, samples/ratio, 25)
+tg.init(800, samples, 100)
 
 # Get the samples
-def GetSamples(i):
-	for i in range(0, samples):
-		print(int(serial.Serial.readline(port)))
-		return int(serial.Serial.readline(port))
+def SerialGet(x):
+	return int(serial.Serial.readline(port))
+
 while 1:
-	tg.plot(GetSamples)
+	tg.plot(SerialGet)
 	tg.clear()
 
 # # Loop cycle
