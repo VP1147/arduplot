@@ -6,5 +6,5 @@
 
 ### Support or Contact
 
-For any bugs or suggestions, feel free to [open a issue]() and describe it. I'll sure appreciate your help.
+For any bugs or suggestions, feel free to [open a issue](https://github.com/VP1147/arduplot/issues) and describe it. We'll sure appreciate your help.
 
