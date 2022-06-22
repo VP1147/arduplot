@@ -1,7 +1,7 @@
 # ArduPlot - Arduino sensor data visualizer
 
 ## Requiremments
-> As of now, this program only works on Linux
+> This software is **Linux-only** for now
 - [Arduino IDE](https://www.arduino.cc/en/software)
 - [Python3](https://www.python.org/downloads/)
 - And Python Libraries
