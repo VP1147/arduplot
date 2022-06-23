@@ -1,14 +1,19 @@
 # Arduboom - vp1147 @ Jan 10th, 2021
+# ArduPlot - vp1147 @ Jun 23rd, 2022
 
-import serial, time, getch # import external libs
+import serial
+import time, getch # import external libs
 import tg # Teenygraph lib. See README.md
 
-# Find the Arduino serial port
+# Search for the Arduino-connected port
 try: port = serial.Serial("/dev/ttyUSB0")
 except:
     try: port = serial.Serial("/dev/ttyUSB1")
-    except: port = serial.Serial("/dev/ttyUSB2")
-
+    except: 
+    	try: port = serial.Serial("/dev/ttyUSB2")
+    	except: 
+    		print("No Arduino detected to USB ports.\n")
+    		print("Please make sure your Arduino is connected and working")
 List = {}
 
 # Number of samples per cycle
@@ -23,7 +28,8 @@ def SerialGet(x):
 	return int(serial.Serial.readline(port))
 
 while 1:
-	tg.plot(SerialGet)
+	try:
+		tg.plot(SerialGet)
 	tg.clear()
 
 # # Loop cycle
