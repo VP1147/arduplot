@@ -1,9 +1,11 @@
 # Arduboom - vp1147 @ Jan 10th, 2021
-# ArduPlot - vp1147 @ Jun 23rd, 2022
+# ArduPlot v1.0 - vp1147 @ Jun 23rd, 2022
 
 import serial
-import time, getch # import external libs
-import tg # Teenygraph lib. See README.md
+import time, getch 			# import external libs
+import tg 					# Teenygraph lib. See README.md
+
+OnTermValues = False 		# Set to True for printing only text results
 
 # Search for the Arduino-connected port
 try: port = serial.Serial("/dev/ttyUSB0")
@@ -12,7 +14,7 @@ except:
     except: 
     	try: port = serial.Serial("/dev/ttyUSB2")
     	except: 
-    		print("No Arduino detected to USB ports.\n")
+    		print("No Arduino detected on USB ports.")
     		print("Please make sure your Arduino is connected and working")
 List = {}
 
@@ -20,18 +22,20 @@ List = {}
 samples = 1000
 
 # Start tg
-tg.theme("dark.json")
-tg.init(800, samples, 100)
+if OnTermValues == False:
+	tg.theme("dark.json")
+	tg.init(800, samples, 100)
 
 # Get the samples
 def SerialGet(x):
 	return int(serial.Serial.readline(port))
 
-while 1:
-	try:
-		tg.plot(SerialGet)
-	tg.clear()
-
+if OnTermValues == False:
+	while 1:
+		print(tg.plot(SerialGet))
+		tg.clear()
+else:
+	while 1: print(SerialGet(0))
 # # Loop cycle
 # while 1:
 #     for i in range(0, samples): 
