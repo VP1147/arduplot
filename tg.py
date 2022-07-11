@@ -84,8 +84,6 @@ def grid(m): # m - Def the distance between 2 lines
 		l = gfx.Line(gfx.Point(0,(Sy/2)-(e/Factor)),gfx.Point(Sx,(Sy/2)-(e/Factor)))
 		l.setFill(gfx.color_rgb(Color3[0],Color3[1],Color3[2])); l.draw(Win)
 		e+=m/2
-		
-
 
 def clear():
 	for i in Win.items[:]:

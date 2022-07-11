@@ -14,7 +14,7 @@ void setup() {
 void loop() {
   // put your main code here, to run repeatedly:
   //float h = dht.readHumidity();
-  float t = dht.readTemperature();
+  float t = dht.readHumidity();
   Serial.println(int(t));
   delay(1);
 }
