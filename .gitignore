@@ -1,2 +1,4 @@
 
 *.pyc
+libraries/Adafruit_Sensor/
+libraries/DHT-sensor-library/
