@@ -19,12 +19,12 @@ except:
 List = {}
 
 # Number of samples per cycle
-samples = 1000
+samples = 300
 
 # Start tg
 if OnTermValues == False:
 	tg.theme("dark.json")
-	tg.init(800, samples, 100)
+	tg.init(800, samples, samples/10)
 
 # Get the samples
 def SerialGet(x):
