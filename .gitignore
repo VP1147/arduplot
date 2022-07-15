@@ -2,3 +2,5 @@
 *.pyc
 libraries/Adafruit_Sensor/
 libraries/DHT-sensor-library/
+.vscode/arduino.json
+.vscode/c_cpp_properties.json
