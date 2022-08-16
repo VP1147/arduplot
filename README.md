@@ -1,10 +1,10 @@
 # ArduPlot - Arduino sensor data visualizer
 
 ## Requiremments
-> This software is **Linux-only** for now
+> This software is currently **Linux-only**
 - [Arduino IDE](https://www.arduino.cc/en/software)
 - [Python3](https://www.python.org/downloads/)
-- And Python Libraries
+- And Python Libraries:
   - pyserial
   - getch
   - graphics.py
@@ -20,11 +20,10 @@
 ### Load code to Arduino
 - Open `arduplot.ino` with Arduino IDE
 - Click **load**
-- If any error, please check 
 
-### Start the program
-- Please make sure all libraries are installed
-- open `arduplot.py` with Python
+### Starting the program
+- Make sure all libraries are installed
+- Execute `arduplot.py`
   ```
   $ python3 arduplot.py
   ```
