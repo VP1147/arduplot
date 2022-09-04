@@ -8,21 +8,17 @@ import tg 					# Teenygraph lib. See README.md
 OnTermValues = False 		# Set to True for printing only text results
 
 def PortSearch():
-	try: port = serial.Serial("/dev/ttyUSB0")
-	except:
-	    try: port = serial.Serial("/dev/ttyUSB1")
-	    except: 
-	    	try: port = serial.Serial("/dev/ttyUSB2")
-	    	except: pass
-
 	try:
-		return port
-	except: 
+		for i in range(0,10):
+			port = serial.Serial("/dev/ttyUSB0")
+			return port
+			print("Arduino is connected on",port)
+	except:
 		print("No Arduino detected on USB ports.")
 		print("Please make sure your Arduino is connected and working")
 
 
-samples = 400				# Number of samples per cycle
+samples = 800				# Number of samples per cycle
 port = PortSearch()			# Search for the Arduino-connected port
 
 
