@@ -1,5 +1,8 @@
-# Arduboom - vp1147 @ Jan 10th, 2021
-# ArduPlot v1.0 - vp1147 @ Jun 23rd, 2022
+# ArduPlot - vp1147 @ Jan 10th, 2021
+# Receives data from an device connected to 
+# the USB serial port (i.e. Arduino) and plots
+# it in function of time. Useful for sensor 
+# analysis and tension/current measurements.
 
 import serial, math
 import time, getch 			# import external libs
@@ -10,7 +13,7 @@ OnTermValues = False 		# Set to True for printing only text results
 def PortSearch():
 	try:
 		for i in range(0,10):
-			port = serial.Serial("/dev/ttyUSB0")
+			port = serial.Serial("/dev/ttyACM0")
 			return port
 			print("Arduino is connected on",port)
 	except:
