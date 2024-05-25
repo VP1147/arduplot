@@ -1,4 +1,4 @@
-int antennaPin = A5;
+int antennaPin = A0;
 int speaker = 3;
 
 int bg;
