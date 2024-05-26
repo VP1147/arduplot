@@ -28,7 +28,7 @@ port = PortSearch()			# Search for the Arduino-connected port
 # Start tg
 if OnTermValues == False:
 	tg.theme("dark.json")
-	tg.init(800, samples, samples/10)
+	tg.init(800, samples*5, samples)
 
 # Get the samples
 def SerialGet(x):
