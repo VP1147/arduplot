@@ -2,7 +2,9 @@
 # Receives data from an device connected to 
 # the USB serial port (i.e. Arduino) and plots
 # it in function of time. Useful for sensor 
-# analysis and tension/current measurements.
+# analysis and current measurements.
+
+## Dependencies: pyserial , getch , time
 
 import serial, math
 import time, getch 			# import external libs
@@ -11,24 +13,19 @@ import tg 					# Teenygraph lib. See README.md
 OnTermValues = False 		# Set to True for printing only text results
 
 def PortSearch():
-	try:
-		for i in range(0,10):
-			port = serial.Serial("/dev/ttyACM0")
-			return port
-			print("Arduino is connected on",port)
-	except:
-		print("No Arduino detected on USB ports.")
-		print("Please make sure your Arduino is connected and working")
-
+	port = serial.Serial("/dev/ttyACM0")
+	return port
+	print("Arduino is connected on",port)
 
 samples = 800				# Number of samples per cycle
+factor = 10
+subdiv = 5
 port = PortSearch()			# Search for the Arduino-connected port
-
 
 # Start tg
 if OnTermValues == False:
 	tg.theme("dark.json")
-	tg.init(800, samples*5, samples)
+	tg.init(800, samples * factor, int( samples / subdiv * factor))
 
 # Get the samples
 def SerialGet(x):
